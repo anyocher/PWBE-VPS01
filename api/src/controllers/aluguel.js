@@ -29,6 +29,7 @@ const getAlugueis = (req, res) => {
             res.status(500).json({ error: 'Erro ao listar manutenções' });
         } else {
             res.json(result);
+            
         }
     });
 }
