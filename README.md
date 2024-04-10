@@ -3,11 +3,11 @@
 Sistema de exemplo de API com testes utilizando o Insomnia
 
 ## Temas de aprendizado
-- Banco de dados (MySQL)
-- API (NodeJS)
-- CRUD (NodeJS)
-- MVC (NodeJS)
-- Testes (Insomnia)
+
+- API - Criação de API (Plataforma de Interface de Aplicação)
+- CRUD - Funcionalidades de Cadastro, consulta, alteração e exclusão
+- MVC - Padrão de projeto (Modelo, Visão e Controle)
+- Testes - Testes unitários da API utilizando software Insomnia
 
 ## Como testar esta API
 Necessário ter o ambiente/tecnologias acima instaladas
@@ -40,3 +40,13 @@ node server.js
 ```
 - 7 Abrir o aplicativo **Insomnia** e importar a coleção de rotas de testes que está na pasta ./testes/insomnia.json
 - 8 Executar todos os testes
+
+- |Desafio|
+|-|
+|A partir do script de criação e população com dados de testes do banco de dados, Desenvolva as seguintes **funcionalidades**|
+|CRUD de Clientes: Implementar operações CRUD (Create, Read, Update, Delete) para os Clientes|
+|CRUD de Telefones: Implementar operações CRUD (Create, Read, Update, Delete) para os telefones|
+|OBS: de preferência criar um CRUD para clientes com telefones juntos|
+|CRUD de Veiculos: Implementar operações CRUD (Create, Read, Update, Delete) para os veiculos|
+|CRUD de Aluguéis: Implementar operações CRUD (Create, Read, Update, Delete) para os aluguéis, neste crud, nas funcionalidades READ, acrescente uma rota que mostre somente os veículos reservados, outra que mostre os aluguados e uma que mostre o relatório completo de todos os aluguéis, utilizando as **views** do script SQL|
+
