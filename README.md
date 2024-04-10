@@ -40,8 +40,8 @@ node server.js
 ```
 - 7 Abrir o aplicativo **Insomnia** e importar a coleção de rotas de testes que está na pasta ./testes/insomnia.json
 - 8 Executar todos os testes
-
-- |Desafio|
+  ### Desafio
+|Desafio|
 |-|
 |A partir do script de criação e população com dados de testes do banco de dados, Desenvolva as seguintes **funcionalidades**|
 |CRUD de Clientes: Implementar operações CRUD (Create, Read, Update, Delete) para os Clientes|
@@ -49,4 +49,3 @@ node server.js
 |OBS: de preferência criar um CRUD para clientes com telefones juntos|
 |CRUD de Veiculos: Implementar operações CRUD (Create, Read, Update, Delete) para os veiculos|
 |CRUD de Aluguéis: Implementar operações CRUD (Create, Read, Update, Delete) para os aluguéis, neste crud, nas funcionalidades READ, acrescente uma rota que mostre somente os veículos reservados, outra que mostre os aluguados e uma que mostre o relatório completo de todos os aluguéis, utilizando as **views** do script SQL|
-
