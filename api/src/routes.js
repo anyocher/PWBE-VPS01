@@ -7,7 +7,7 @@ const Veiculo = require('./controllers/veiculo');
 const Aluguel = require('./controllers/aluguel');
 
 router.get('/', (req, res) => {
-    res.json("API Manutenção 1.0");
+    res.json("API Alugueis 1.0");
 });
 
 router.post('/clientes', Cliente.addCliente);

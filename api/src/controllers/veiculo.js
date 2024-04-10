@@ -1,6 +1,5 @@
 const con = require('../connections/mysql');
 
-// CRUD - CREATE
 
 const addVeiculo = (req, res) => {
     
@@ -23,8 +22,6 @@ const addVeiculo = (req, res) => {
 
 };
 
-// CRUD - READ
-
 const getVeiculos = (req, res) => {
     con.query('SELECT * FROM veiculo ORDER BY placa DESC', (err, result) => {
         if (err) {
@@ -46,8 +43,6 @@ const getVeiculo = (req, res) => {
     });
 }
 
-// CRUD - UPDATE
-
 const updateVeiculo = (req, res) => {
 
     const { placa, modelo, marca, ano } = req.body;
@@ -66,9 +61,6 @@ const updateVeiculo = (req, res) => {
     }
 
 }
-
-// CRUD - DELETE
-
 const deleteVeiculo = (req, res) => {
     
     const { placa } = req.params;
@@ -89,7 +81,6 @@ const deleteVeiculo = (req, res) => {
     }
     
 }
-
 module.exports = {
     addVeiculo,
     getVeiculos,

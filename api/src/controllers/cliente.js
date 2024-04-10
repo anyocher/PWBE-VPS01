@@ -1,6 +1,5 @@
 const con = require('../connections/mysql');
 
-// CRUD - CREATE
 
 const addCliente = (req, res) => {
     
@@ -23,8 +22,6 @@ const addCliente = (req, res) => {
 
 };
 
-// CRUD - READ
-
 const getClientes = (req, res) => {
 
     con.query('SELECT * FROM cliente', (err, result) => {
@@ -46,9 +43,6 @@ const getCliente = (req, res) => {
             res.json(result);
         }
     });
-}
-
-// CRUD - UPDATE
 
 const updateCliente = (req, res) => {
 
@@ -67,9 +61,6 @@ const updateCliente = (req, res) => {
         res.status(400).json({ error: 'Favor enviar todos os campos obrigatórios' });
     }
 }
-
-// CRUD - DELETE
-
 const deleteCliente = (req, res) => {
     const { cpf } = req.params;
     
@@ -104,9 +95,6 @@ const deleteCliente = (req, res) => {
         res.status(400).json({ error: 'Favor enviar todos os campos obrigatórios' });
     }
 }
-
-
-
 module.exports = {
     addCliente,
     getClientes,

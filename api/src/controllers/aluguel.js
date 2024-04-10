@@ -1,6 +1,5 @@
 const con = require('../connections/mysql');
 
-// CRUD - CREATE
 
 const addAluguel = (req, res) => {
     
@@ -23,7 +22,6 @@ const addAluguel = (req, res) => {
 
 };
 
-// CRUD - READ
 
 const getAlugueis = (req, res) => {
     con.query('SELECT * FROM Aluguel', (err, result) => {
@@ -47,9 +45,6 @@ const getAluguel = (req, res) => {
 }
 
 
-
-// CRUD - UPDATE
-
 const updateAluguel = (req, res) => {
 
     const { id, placa, matricula, inicio, fim, descricao } = req.body;
@@ -68,8 +63,6 @@ const updateAluguel = (req, res) => {
     }
 
 }
-
-// CRUD - DELETE
 
 const deleteAluguel = (req, res) => {
     

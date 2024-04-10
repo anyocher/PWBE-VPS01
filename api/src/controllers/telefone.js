@@ -1,7 +1,5 @@
 const con = require('../connections/mysql');
 
-// CRUD - CREATE
-
 const addTelefone = (req, res) => {
     
     const { matricula, numero } = req.body;
@@ -23,7 +21,6 @@ const addTelefone = (req, res) => {
 
 };
 
-// CRUD - READ
 
 const getTelefones = (req, res) => {
 
@@ -47,7 +44,6 @@ const getTelefone = (req, res) => {
     });
 }
 
-// CRUD - UPDATE
 
 const updateTelefone = (req, res) => {
 
@@ -67,9 +63,6 @@ const updateTelefone = (req, res) => {
     }
 
 }
-
-// CRUD - DELETE
-
 const deleteTelefone = (req, res) => {
     
     const { matricula } = req.params;
