@@ -16,8 +16,8 @@ Necessário ter o ambiente/tecnologias acima instaladas
 - 3 Instalar o banco de dados
     - A Abrir o XAMPP e clicar em start no MySQL, ou iniciar o MySQL da maneira que preferir.
     - B Rodar os scripts de criação do Banco de dados e de população com dados de teste.
-        - ./bcd/script.sql
-        - ./testes/Insomnia.json
+        -  ./bcd/script.sql
+        -  ./testes/Insomnia.json
 
 - 4 Abrir um terminal **cmd** ou **bash** e navegar até a pasta ./api
 ```bash
