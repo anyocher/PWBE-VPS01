@@ -8,6 +8,13 @@ Sistema de exemplo de API com testes utilizando o Insomnia
 - CRUD - Funcionalidades de Cadastro, consulta, alteração e exclusão
 - MVC - Padrão de projeto (Modelo, Visão e Controle)
 - Testes - Testes unitários da API utilizando software Insomnia
+- 
+## Para importar no Insomnia, siga estes passos:
+
+1. Abra o Insomnia.
+2. Vá para File > Import.
+3. Selecione o arquivo insomnia.json deste repositório.
+4. As rotas serão importadas e estarão disponíveis para teste .
 
 ## Como testar esta API
 Necessário ter o ambiente/tecnologias acima instaladas
