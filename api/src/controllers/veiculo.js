@@ -1,54 +1,64 @@
-const con = require('../connections/mysql');
+const con = require('../connection/mysql');
+
+
 
 
 const addVeiculo = (req, res) => {
     
     const { placa, modelo, marca, tipo, diaria } = req.body;
+
     if (placa && modelo && marca && tipo && diaria) {
-        con.query('INSERT INTO veiculo (placa, modelo, marca, tipo ENUM, diaria) VALUES (?, ?, ?, ?, ?)',
+
+        con.query('INSERT INTO Veiculo (placa, modelo, marca, tipo, diaria) VALUES (?, ?, ?, ?, ?)',
+
             [placa, modelo, marca, tipo, diaria],
+
             (err, result) => {
+
                 if (err) {
+
                     console.error('Erro ao adicionar veículo:', err);
                     res.status(500).json({ error: 'Erro ao adicionar veículo' });
+
                 } else {
+
                     const newVehicle = { placa, modelo, marca, tipo, diaria };
                     res.status(201).json(newVehicle);
+
                 }
+
             });
     } else {
+
         res.status(400).json({ error: 'Favor enviar todos os campos obrigatórios' });
+
     }
 
 };
 
+
+
+
 const getVeiculos = (req, res) => {
-    con.query('SELECT * FROM veiculo ORDER BY placa DESC', (err, result) => {
+
+    con.query('SELECT * FROM Veiculo', (err, result) => {
         if (err) {
             res.status(500).json({ error: 'Erro ao listar veículos' });
         } else {
             res.json(result);
         }
     });
+
 }
 
-const getVeiculo = (req, res) => {
-    const sql = "SELECT * FROM veiculo WHERE placa LIKE ?";
-    con.query(sql, `${[req.params.placa]}`, (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            res.json(result);
-        }
-    });
-}
+
 
 const updateVeiculo = (req, res) => {
 
-    const { placa, modelo, marca, ano } = req.body;
-    if (placa && modelo && marca && ano) {
-        con.query('UPDATE veiculo SET modelo = ?, marca = ?, ano = ? WHERE placa = ?', 
-        [modelo, marca, ano, placa], 
+    const { placa, modelo, marca, tipo, diaria } = req.body;
+    if (placa && modelo && marca && tipo && diaria) {
+        con.query('UPDATE Veiculo SET modelo = ?, marca = ?, tipo = ?, diaria = ? WHERE placa = ?', 
+        [modelo, marca, tipo, diaria, placa], 
         (err, result) => {
             if (err) {
                 res.status(500).json({ error: err });
@@ -61,11 +71,14 @@ const updateVeiculo = (req, res) => {
     }
 
 }
+
+
+
 const deleteVeiculo = (req, res) => {
     
     const { placa } = req.params;
     if (placa) {
-        con.query('DELETE FROM veiculo WHERE placa = ?', [placa], (err, result) => {
+        con.query('DELETE FROM Veiculo WHERE placa = ?', [placa], (err, result) => {
             if (err) {
                 res.status(500).json({ error: err });
             } else {
@@ -81,10 +94,15 @@ const deleteVeiculo = (req, res) => {
     }
     
 }
+
+
+
+
+
+
 module.exports = {
     addVeiculo,
     getVeiculos,
-    getVeiculo,
     updateVeiculo,
     deleteVeiculo
 }

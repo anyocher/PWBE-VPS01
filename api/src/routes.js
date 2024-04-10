@@ -1,37 +1,35 @@
 const express = require('express');
-const router = express.Router(); 
+const routes = express.Router(); 
 
 const Cliente = require('./controllers/cliente');
 const Telefone = require('./controllers/telefone');
 const Veiculo = require('./controllers/veiculo');
-const Aluguel = require('./controllers/aluguel');
+const Aluguel = require('./controllers/aluguel'); 
 
-router.get('/', (req, res) => {
-    res.json("API Alugueis 1.0");
+routes.get('/', (req, res) => {
+    res.json("aluguel");
 });
 
-router.post('/clientes', Cliente.addCliente);
-router.get('/clientes', Cliente.getClientes);
-router.get('/clientes/:cpf', Cliente.getCliente);
-router.put('/clientes', Cliente.updateCliente);
-router.delete('/clientes/:cpf', Cliente.deleteCliente);
+routes.post('/clientes', Cliente.addCliente);
+routes.get('/clientes/:cpf', Cliente.getCliente);
+routes.put('/clientes/:cpf', Cliente.updateCliente);
+routes.delete('/clientes/:cpf', Cliente.deleteCliente);
 
-router.post('/telefones', Telefone.addTelefone);
-router.get('/telefones', Telefone.getTelefones);
-router.get('/telefones/:cpf', Telefone.getTelefone);
-router.put('/telefones', Telefone.updateTelefone);
-router.delete('/telefones/:cpf', Telefone.deleteTelefone);
+routes.post('/telefones', Telefone.addTelefone);
+routes.get('/telefones/:cpf', Telefone.getTelefones);
+routes.put('/telefones/:cpf', Telefone.updateTelefone);
+routes.delete('/telefones/:cpf', Telefone.deleteTelefone);
 
-router.post('/veiculos', Veiculo.addVeiculo);
-router.get('/veiculos', Veiculo.getVeiculos);
-router.get('/veiculos/:placa', Veiculo.getVeiculo);
-router.put('/veiculos', Veiculo.updateVeiculo);
-router.delete('/veiculos/:placa', Veiculo.deleteVeiculo);
+routes.post('/veiculos', Veiculo.addVeiculo);
+routes.get('/veiculos/:placa', Veiculo.getVeiculos);
+routes.put('/veiculos/:placa', Veiculo.updateVeiculo);
+routes.delete('/veiculos/:placa', Veiculo.deleteVeiculo);
 
-router.post('/alugueis', Aluguel.addAluguel);
-router.get('/alugueis', Aluguel.getAlugueis);
-router.get('/alugueis/:id', Aluguel.getAluguel);
-router.put('/alugueis', Aluguel.updateAluguel);
-router.delete('/alugueis/:id', Aluguel.deleteAluguel);
+routes.post('/alugueis', Aluguel.addAluguel);
+routes.get('/alugueis', Aluguel.getAluguel);
+routes.get('/alugueis/reservados', Aluguel.mostrarReservados);
+routes.get('/alugueis/alugados', Aluguel.mostrarAlugados);
+routes.put('/alugueis/:id', Aluguel.updateAluguel);
+routes.delete('/alugueis/:id', Aluguel.deleteAluguel);
 
-module.exports = router;
+module.exports = routes;
